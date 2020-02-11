@@ -1,0 +1,249 @@
+<html>
+  <head>
+    <title>Income Expenses App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-warning">
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col text-center p-3 mb-3">
+          <h1>
+            <span class="badge badge-secondary"> Income & Expenses App</span>
+          </h1>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-3 text-center shadow-lg p-3 bg-success ">
+          <div class="income">
+            <h2
+              class="bg-secondary shadow-lg text-white p-3 rounded-circle text-uppercase"
+            >
+              Income
+            </h2>
+            <div class="income-list mt-5">
+              <!-- 
+              <div class="item row mb-2 text-white  border border-warning align-middle p-1 ml-1 mr-1">
+                <div class=" col-6 text-left" id="inc-0">
+                  <div>Salary</div>
+                </div>
+                <div class="col-3">
+                  <div class="text-left">1000.00</div>
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-inc-0" class="item-delete-btn btn btn-outline-danger">
+                    <i id="icon-item-inc-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-warning align-middle p-1 ml-1 mr-1">
+                <div class="col-6 text-left" id="inc-0">
+                  <div>Salary</div>
+                </div>
+                <div class="col-3">
+                  <div class="text-left">1000.00</div>
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-inc-0" class="item-delete-btn btn btn-outline-danger">
+                    <i id="icon-item-inc-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-warning align-middle p-1 ml-1 mr-1">
+                <div class=" col-6 text-left" id="inc-0">
+                  <div>Salary</div>
+                </div>
+                <div class="col-3">
+                  <div class="text-left">1000.00</div>
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-inc-0" class="item-delete-btn btn btn-outline-danger">
+                    <i id="icon-item-inc-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-warning align-middle p-1 ml-1 mr-1">
+                <div class=" col-6 text-left" id="inc-0">
+                  <div>Salary</div>
+                </div>
+                <div class="col-3">
+                  <div class="text-left">1000.00</div>
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-inc-0" class="item-delete-btn btn btn-outline-danger">
+                    <i id="icon-item-inc-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-warning align-middle p-1 ml-1 mr-1">
+                <div class=" col-6 text-left" id="inc-0">
+                  <div>Salary</div>
+                </div>
+                <div class="col-3">
+                  <div class="text-left">1000.00</div>
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-inc-0" class="item-delete-btn btn btn-outline-danger">
+                    <i id="icon-item-inc-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+               -->
+            </div>
+          </div>
+        </div>
+        <div class="col-4 ml-1 mr-1 shadow-lg p-3 bg-white rounded">
+          <div class="text-center ">
+            <h3><span class=" budget-month">%MONTH%</span></h3>
+          </div>
+          <div class="row text-center">
+            <div class="col ">
+              <div class="m-3 badge badge-dark">
+                <h5>Available Budget</h5>
+                <h1><div class="budget-value"></div></h1>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="row bg-success ml-2 p-2 text-white text-uppercase mb-1 mr-2"
+          >
+            <div class="col-6">
+              <div class="text-left"><h4>Income</h4></div>
+            </div>
+            <div class="col-3">
+              <div class="budget-income-value text-right"></div>
+            </div>
+          </div>
+
+          <div class="row bg-danger ml-2 p-2 text-white text-uppercase mr-2">
+            <div class="col-6">
+              <div class="text-left"><h4>Expenses</h4></div>
+            </div>
+            <div class="col-3 text-right">
+              <div class="budget-expenses-value"></div>
+            </div>
+            <div class="col-3 text-right">
+              <small>
+                <u> <div class="budget-expenses-percentage"></div></u
+              ></small>
+            </div>
+          </div>
+
+          <form>
+            <div class="m-5 text-center ">
+              <select class="add-type form-control">
+                <option value="inc" selected>+</option>
+                <option value="exp">-</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Add Description"
+                class="add-description form-control"
+                value="description"
+              />
+
+              <input
+                type="number"
+                class="add-value form-control"
+                placeholder="Value"
+                value="0"
+              />
+              <button class=" mt-3 add-btn btn btn-outline-dark">
+                <i class="fa fa-check"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-4 text-center shadow-lg p-3 bg-danger ">
+          <div class="expenses">
+            <h2
+              class=" shadow-lg p-3 mb-5 bg-secondary text-white rounded-circle text-uppercase"
+            >
+              Expenses
+            </h2>
+            <div class="expenses-list">
+              <!-- 
+              <div class="item row mb-2 text-white  border border-dark align-middle p-1 ml-1 mr-1">
+                <div class=" col-4" id="exp-0"><div class="text-left">Holiday</div></div>
+                <div class="col-3"><div class="text-right">2000.00</div></div>
+                <div class="col-2">
+                  <small>
+                    <u>
+                      <div class="item-percentage text-right">21%</div></u
+                    ></small
+                  >
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-exp-0" class="item-delete-btn btn btn-outline-dark">
+                    <i id="icon-item-exp-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-dark align-middle p-1 ml-1 mr-1">
+                <div class="col-4" id="exp-0"><div class="text-left">Holiday</div></div>
+                <div class="col-3"><div class="text-right">2000.00</div></div>
+                <div class="col-2">
+                  <small>
+                    <u>
+                      <div class="item-percentage text-right">21%</div></u
+                    ></small
+                  >
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-exp-0" class="item-delete-btn btn btn-outline-dark">
+                    <i id="icon-item-exp-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-dark align-middle p-1 ml-1 mr-1">
+                <div class="col-4" id="exp-0"><div class="text-left">Holiday</div></div>
+                <div class="col-3"><div class="text-right">2000.00</div></div>
+                <div class="col-2">
+                  <small>
+                    <u>
+                      <div class="item-percentage text-right">21%</div></u
+                    ></small
+                  >
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-exp-0" class="item-delete-btn btn btn-outline-dark">
+                    <i id="icon-item-exp-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="item row mb-2 text-white  border border-dark align-middle p-1 ml-1 mr-1">
+                <div class="col-4" id="exp-0"><div class="text-left">Holiday</div></div>
+                <div class="col-3"><div class="text-right">2000.00</div></div>
+                <div class="col-2">
+                  <small>
+                    <u>
+                      <div class="item-percentage text-right">21%</div></u
+                    ></small
+                  >
+                </div>
+                <div class="col-3">
+                  <button id="btn-item-exp-0" class="item-delete-btn btn btn-outline-dark">
+                    <i id="icon-item-exp-0" class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+               -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
