@@ -3,7 +3,7 @@
 const CACHE = 'income-expense';
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPages = ['index.html', 'app.js'];
+const offlineFallbackPage = 'index.html';
 
 // Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener('install', function(event) {
@@ -21,7 +21,7 @@ self.addEventListener('install', function(event) {
       //   );
       // }
 
-      return cache.addAll(offlineFallbackPages);
+      return cache.add(offlineFallbackPage);
     })
   );
 });
@@ -44,7 +44,7 @@ self.addEventListener('fetch', function(event) {
         '[PWA Builder] Network request Failed. Serving offline page ' + error
       );
       return caches.open(CACHE).then(function(cache) {
-        return cache.matchAll(offlineFallbackPages);
+        return cache.match(offlineFallbackPage);
       });
     })
   );

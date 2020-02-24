@@ -1,5 +1,6 @@
 {
   "name": "income expense app",
+  "description": "income expense app",
   "short_name": "income expense",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
